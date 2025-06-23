@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from 'next/image'
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
@@ -30,6 +31,8 @@ export default function RootLayout({
       >
 
         <header>
+
+          
           
           <div className="bg-gray-200">
             <ul className="flex gap-4 text-lg text-purple-500">
@@ -49,13 +52,19 @@ export default function RootLayout({
           </div>
         </header>
 
-        <main className="p-4 h-screen w-full bg-gray-100">
+        <main className="p-4 w-full bg-gray-100">
+          <Image src="/img/escuelaNextJs.png" alt="Logo" width={60} height={60}></Image>
           <h1 className="text-2xl font-bold text-purple-900">Escuela NextJS - Navegación</h1>
           {children}
         </main>
 
 
-        <footer className="text-center text-purple-500">Derechos reservados @2025</footer>
+        <footer className="fixed bottom-0 left-0 right-0 bg-gray-200 py-4 text-center text-purple-500 z-10">
+          <div className="container mx-auto px-4">
+            <p className="text-sm">Derechos reservados @2025</p>
+          </div>
+        </footer>
+
       </body>
     </html>
   );
